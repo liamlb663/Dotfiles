@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+PICOM_DIR=$HOME/.config/picom
+PICOM_CONF=$PICOM_DIR/picom.conf
+
+rm $PICOM_CONF
+case $1 in
+    cool)
+        cp $PICOM_DIR/cool.conf $PICOM_CONF
+        echo cool config
+    ;;
+    *)
+        cp $PICOM_DIR/default.conf $PICOM_CONF
+        echo default config
+    ;;
+esac
+i3 restart
+

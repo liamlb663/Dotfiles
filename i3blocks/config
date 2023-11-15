@@ -1,0 +1,45 @@
+# i3blocks configuration file
+#
+# The i3blocks man page describes the usage of the binary,
+# and its website describes the configuration:
+#
+#     https://vivien.github.io/i3blocks
+
+
+# Global properties
+separator=true
+separator_block_width=15
+
+[Days Until]
+color=#70b4eb
+command=echo $($HOME/.config/i3blocks/scripts/strawberry-view)
+interval=2
+
+[Days Until]
+command=echo $($HOME/.config/i3blocks/scripts/days_until.py)
+interval=once
+
+[Ip]
+color=#66ff66
+command=echo $(ip addr | grep inet | grep -v "host" | grep -v "inet6" | grep -v "docker" | tail -n 1 | awk '{print($2)}')
+interval=60*15
+
+[Current User]
+color=#f5af19
+command=echo "$USER"
+interval=once
+
+[Temp]
+command=echo $(curl "wttr.in/rochester?m&format=%f")
+interval=60*30
+
+[time]
+command=date '+%m/%d %H:%M:%S'
+interval=1
+
+[battery]
+command=echo $($HOME/.config/i3blocks/scripts/getBattery)
+interval=1
+
+[end gap]
+full_text=

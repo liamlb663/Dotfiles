@@ -1,0 +1,19 @@
+# Color
+alias ls='exa --color=auto'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+alias watch='watch --color'
+
+alias ll='ls -l'
+alias la='ls -a'
+alias l='ls -F'
+
+alias sc='screen'
+alias cl='clear'
+
+alias att='tmux attach'
+alias tls='tmux ls'
+alias ".."="cd ..;l"
+
+alias lg='lazygit'
