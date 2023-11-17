@@ -1,4 +1,4 @@
 
-rm -r ~/.config/nvim/
+rm -rf ~/.config/nvim/
 mkdir -p ~/.config/nvim/
 cp -r ./nvim/* ~/.config/nvim/
