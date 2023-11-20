@@ -10,14 +10,10 @@
 separator=true
 separator_block_width=15
 
-[Days Until]
+[Read from Strawberry]
 color=#70b4eb
 command=echo $($HOME/.config/i3blocks/scripts/strawberry-view)
 interval=2
-
-[Days Until]
-command=echo $($HOME/.config/i3blocks/scripts/days_until.py)
-interval=once
 
 [Ip]
 color=#66ff66
