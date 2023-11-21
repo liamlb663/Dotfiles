@@ -108,14 +108,8 @@ export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.bin:$PATH"
 
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-
 eval "$(zoxide init bash --hook pwd)"
 
 export XDG_CONFIG_HOME="$HOME/.config"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-export PATH=$PATH:/home/lahearn/.spicetify
-. "$HOME/.cargo/env"
