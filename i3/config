@@ -248,7 +248,7 @@ bar {
 	}
 }
 
-exec_always --no-startup-id picom --config $HOME/.config/picom/picom.conf
+# exec_always --no-startup-id picom --config $HOME/.config/picom/picom.conf
 exec_always --no-startup-id feh --bg-scale --randomize $HOME/Pictures/WallPapers/*
 
 workspace_auto_back_and_forth yes
