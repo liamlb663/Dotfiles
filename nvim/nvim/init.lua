@@ -49,6 +49,8 @@ require('packer').startup(function(use)
     })
     use 'junegunn/goyo.vim'
     use 'preservim/vim-pencil'
+
+    use 'dimfeld/section-wordcount.nvim'
 end)
 
 vim.o.background = "dark" -- or "light" for light mode
@@ -174,3 +176,9 @@ vim.cmd [[source ~/.config/nvim/barbar.vim]]
 
 -- math stuff
 vim.cmd [[source ~/.config/nvim/vimtex.vim]]
+
+require('section-wordcount').setup{
+    highlight = "String",
+    virt_text_pos = "eol",
+}
+
