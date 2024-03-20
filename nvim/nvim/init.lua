@@ -47,8 +47,11 @@ require('packer').startup(function(use)
         "iamcco/markdown-preview.nvim",
         run = function() vim.fn["mkdp#util#install"]() end,
     })
+
     use 'junegunn/goyo.vim'
-    use 'preservim/vim-pencil'
+    use 'godlygeek/tabular'
+    use 'elzr/vim-json'
+    use 'preservim/vim-markdown'
 end)
 
 vim.o.background = "dark" -- or "light" for light mode
