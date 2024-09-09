@@ -52,6 +52,9 @@ require('packer').startup(function(use)
     use 'godlygeek/tabular'
     use 'elzr/vim-json'
     use 'preservim/vim-markdown'
+
+    use 'stevearc/aerial.nvim'
+    use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
 end)
 
 vim.o.background = "dark" -- or "light" for light mode
@@ -177,3 +180,23 @@ vim.cmd [[source ~/.config/nvim/barbar.vim]]
 
 -- math stuff
 vim.cmd [[source ~/.config/nvim/vimtex.vim]]
+
+require('aerial').setup({
+  -- use on_attach to set keymaps when aerial has attached to a buffer
+  on_attach = function(bufnr)
+    -- Jump forwards/backwards with '{' and '}'
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', '{', '<cmd>AerialPrev<CR>', {})
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', '}', '<cmd>AerialNext<CR>', {})
+
+    -- Toggle
+    vim.api.nvim_set_keymap('n', '<leader>a', '<cmd>AerialToggle!<CR>', {})
+  end
+})
+
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = "all", -- add more languages as needed
+  highlight = {
+    enable = true,              -- false will disable the whole extension
+    additional_vim_regex_highlighting = false,
+  },
+}
