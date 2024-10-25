@@ -5,12 +5,12 @@ function! WriteModeToggle()
     " If write mode is enabled, disable it
     let g:write_mode_enabled = 0
     Goyo
-    set linebreak
+    set nolinebreak
   else
     " If write mode is not enabled, enable it
     let g:write_mode_enabled = 1
     Goyo
-    set nolinebreak
+    set linebreak
   endif
 endfunction
 
@@ -33,8 +33,6 @@ let g:vim_markdown_json_frontmatter = 1  " for JSON format
 
 " do not close the preview tab when switching to other buffers
 let g:mkdp_auto_close = 0
-
-nnoremap <C-m> :MarkdownPreview<CR>
 
 
 

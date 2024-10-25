@@ -35,7 +35,6 @@ require('packer').startup(function(use)
 
     use 'nvim-lua/plenary.nvim'
     use 'kdheepak/lazygit.nvim'
-    use 'mfussenegger/nvim-dap'
 
     use 'mg979/vim-visual-multi'
 
@@ -55,6 +54,13 @@ require('packer').startup(function(use)
 
     use 'stevearc/aerial.nvim'
     use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
+    use 'tpope/vim-fugitive'
+
+    use 'mfussenegger/nvim-dap'
+    use 'jay-babu/mason-nvim-dap.nvim'
+    use 'nvim-neotest/nvim-nio'
+    use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
+
 end)
 
 vim.o.background = "dark" -- or "light" for light mode
@@ -70,6 +76,13 @@ vim.cmd [[source ~/.config/nvim/writing.vim]]
 --LSP
 require('mason').setup()
 local mason_lspconfig = require('mason-lspconfig')
+
+--DAP
+require("mason-nvim-dap").setup({
+    automatic_installation = true,
+})
+
+require("dap-settings")
 
 --Completion
   -- Set up nvim-cmp.

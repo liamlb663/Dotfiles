@@ -49,8 +49,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/home/liaml/.cache/nvim/packer_hererocks/2.1.1702233742/share/lua/5.1/?.lua;/home/liaml/.cache/nvim/packer_hererocks/2.1.1702233742/share/lua/5.1/?/init.lua;/home/liaml/.cache/nvim/packer_hererocks/2.1.1702233742/lib/luarocks/rocks-5.1/?.lua;/home/liaml/.cache/nvim/packer_hererocks/2.1.1702233742/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/home/liaml/.cache/nvim/packer_hererocks/2.1.1702233742/lib/lua/5.1/?.so"
+local package_path_str = "/home/liaml/.cache/nvim/packer_hererocks/2.1.1716656478/share/lua/5.1/?.lua;/home/liaml/.cache/nvim/packer_hererocks/2.1.1716656478/share/lua/5.1/?/init.lua;/home/liaml/.cache/nvim/packer_hererocks/2.1.1716656478/lib/luarocks/rocks-5.1/?.lua;/home/liaml/.cache/nvim/packer_hererocks/2.1.1716656478/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/home/liaml/.cache/nvim/packer_hererocks/2.1.1716656478/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -74,6 +74,11 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["aerial.nvim"] = {
+    loaded = true,
+    path = "/home/liaml/.local/share/nvim/site/pack/packer/start/aerial.nvim",
+    url = "https://github.com/stevearc/aerial.nvim"
+  },
   ["barbar.nvim"] = {
     loaded = true,
     path = "/home/liaml/.local/share/nvim/site/pack/packer/start/barbar.nvim",
@@ -164,6 +169,11 @@ _G.packer_plugins = {
     path = "/home/liaml/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
     url = "https://github.com/nvim-tree/nvim-tree.lua"
   },
+  ["nvim-treesitter"] = {
+    loaded = true,
+    path = "/home/liaml/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter"
+  },
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "/home/liaml/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
@@ -184,6 +194,11 @@ _G.packer_plugins = {
     path = "/home/liaml/.local/share/nvim/site/pack/packer/start/rust-tools.nvim",
     url = "https://github.com/simrat39/rust-tools.nvim"
   },
+  tabular = {
+    loaded = true,
+    path = "/home/liaml/.local/share/nvim/site/pack/packer/start/tabular",
+    url = "https://github.com/godlygeek/tabular"
+  },
   ultisnips = {
     loaded = true,
     path = "/home/liaml/.local/share/nvim/site/pack/packer/start/ultisnips",
@@ -194,10 +209,15 @@ _G.packer_plugins = {
     path = "/home/liaml/.local/share/nvim/site/pack/packer/start/vim-glsl",
     url = "https://github.com/tikhomirov/vim-glsl"
   },
-  ["vim-pencil"] = {
+  ["vim-json"] = {
     loaded = true,
-    path = "/home/liaml/.local/share/nvim/site/pack/packer/start/vim-pencil",
-    url = "https://github.com/preservim/vim-pencil"
+    path = "/home/liaml/.local/share/nvim/site/pack/packer/start/vim-json",
+    url = "https://github.com/elzr/vim-json"
+  },
+  ["vim-markdown"] = {
+    loaded = true,
+    path = "/home/liaml/.local/share/nvim/site/pack/packer/start/vim-markdown",
+    url = "https://github.com/preservim/vim-markdown"
   },
   ["vim-visual-multi"] = {
     loaded = true,
