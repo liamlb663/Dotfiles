@@ -3,7 +3,7 @@
 #include <string.h>
 
 int getCurrentNRG(){
-	char* file = "/sys/class/power_supply/BAT0/capacity";
+	char* file = "/sys/class/power_supply/BAT1/capacity";
 	FILE* fptr = fopen(file, "r");
 	if(fptr == NULL) return -1;
 	char buf[3];
@@ -12,7 +12,7 @@ int getCurrentNRG(){
 }
 
 char getStatus(){
-	char* file = "/sys/class/power_supply/BAT0/status";
+	char* file = "/sys/class/power_supply/BAT1/status";
 	FILE* fptr = fopen(file, "r");
 	if(fptr == NULL) return '?';
 	char buf[13];

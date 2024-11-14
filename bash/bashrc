@@ -113,3 +113,6 @@ eval "$(zoxide init bash --hook pwd)"
 export XDG_CONFIG_HOME="$HOME/.config"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+[ -f ~/.touchpad_settings ] && source ~/.touchpad_settings
+
+source /usr/share/nvm/init-nvm.sh
