@@ -4,7 +4,7 @@
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 # Define the target directory (local nvim directory) and the link destination
-TARGET_DIR="$SCRIPT_DIR/i3"
+TARGET_DIR="$SCRIPT_DIR/i3Framework"
 LINK_DEST="$HOME/.config/i3"
 
 # Remove any existing symbolic link or directory at ~/.config/nvim

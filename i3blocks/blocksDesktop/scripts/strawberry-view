@@ -1,0 +1,19 @@
+#!/bin/python3
+
+import dbus
+
+def get_strawberry_now_playing():
+    session_bus = dbus.SessionBus()
+    player_iface = session_bus.get_object('org.mpris.MediaPlayer2.strawberry', '/org/mpris/MediaPlayer2')
+    player_props = dbus.Interface(player_iface, 'org.freedesktop.DBus.Properties')
+    metadata = player_props.Get('org.mpris.MediaPlayer2.Player', 'Metadata')
+
+    # Extract artist and title from dbus.Array
+    artist = metadata['xesam:artist'][0] if 'xesam:artist' in metadata else 'Unknown Artist'
+    title = metadata['xesam:title'] if 'xesam:title' in metadata else 'Unknown Title'
+
+    return f'{artist} - {title}'
+
+if __name__ == '__main__':
+    now_playing = get_strawberry_now_playing()
+    print(now_playing)

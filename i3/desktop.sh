@@ -4,8 +4,8 @@
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 # Define the target directory (local nvim directory) and the link destination
-TARGET_DIR="$SCRIPT_DIR/i3blocks"
-LINK_DEST="$HOME/.config/i3blocks"
+TARGET_DIR="$SCRIPT_DIR/i3Desktop"
+LINK_DEST="$HOME/.config/i3"
 
 # Remove any existing symbolic link or directory at ~/.config/nvim
 if [ -e "$LINK_DEST" ]; then
