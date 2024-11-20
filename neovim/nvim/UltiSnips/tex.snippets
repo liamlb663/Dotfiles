@@ -18,8 +18,8 @@ snippet template "Basic template" b
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{textcomp}
-\usepackage{amsmath, amssymb}
 
+\usepackage{amsmath, amssymb, mathrsfs}
 
 % figure support
 \usepackage{import}
@@ -168,7 +168,7 @@ snippet == "equals" iA
 &= $1 \\\\
 endsnippet
 
-snippet != "equals" iA
+snippet != "not equals" iA
 \neq
 endsnippet
 
@@ -605,12 +605,20 @@ Let $\Omega \subset \C$ be open.
 endsnippet
 
 
-snippet HH "H" iA
-\mathbb{H}
+snippet BB "Math BB" iA
+\mathbb{$1}$0
 endsnippet
 
-snippet DD "D" iA
-\mathbb{D}
+snippet SCR "Math scr" iA
+\mathscr{$1}$0
+endsnippet
+
+snippet CAL "Math cal" iA
+\mathcal{$1}$0
+endsnippet
+
+snippet PM "Plus Minus" iA
+\textpm
 endsnippet
 
 # vim:ft=snippets
