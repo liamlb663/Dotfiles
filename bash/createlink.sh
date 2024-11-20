@@ -4,7 +4,7 @@
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 # List of config files you want to create symlinks for
-config_files=("bash_aliases" "bash_logout" "bashrc" "createlink.sh" "profile")
+config_files=("bash_aliases" "bash_logout" "bashrc" "profile")
 
 # Loop over each file in the list
 for file in "${config_files[@]}"; do
