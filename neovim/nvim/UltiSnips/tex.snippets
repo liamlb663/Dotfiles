@@ -83,6 +83,18 @@ snippet desc "Description" b
 \end{description}
 endsnippet
 
+snippet sec "Section" b
+\section*{$1}$0
+endsnippet
+
+snippet ssec "Sub-Section" bA
+\subsection*{$1}$0
+endsnippet
+
+snippet sssec "Sub-Sub-Section" bA
+\subsubsection*{$1}$0
+endsnippet
+
 snippet pac "Package" b
 \usepackage[${1:options}]{${2:package}}$0
 endsnippet
@@ -208,27 +220,31 @@ snippet lr "left( right)" i
 \left( ${1:${VISUAL}} \right) $0
 endsnippet
 
-snippet lr( "left( right)" i
+snippet lr( "left( right)" iA
 \left( ${1:${VISUAL}} \right) $0
 endsnippet
 
-snippet lr| "left| right|" i
+snippet lr| "left| right|" iA
 \left| ${1:${VISUAL}} \right| $0
 endsnippet
 
-snippet lr{ "left\{ right\}" i
+snippet lr{ "left\{ right\}" iA
 \left\\{ ${1:${VISUAL}} \right\\} $0
 endsnippet
 
-snippet lrb "left\{ right\}" i
+snippet lrb "left\{ right\}" iA
 \left\\{ ${1:${VISUAL}} \right\\} $0
 endsnippet
 
-snippet lr[ "left[ right]" i
+snippet lr[ "left[ right]" iA
 \left[ ${1:${VISUAL}} \right] $0
 endsnippet
 
 snippet lra "leftangle rightangle" iA
+\left<${1:${VISUAL}} \right>$0
+endsnippet
+
+snippet lr< "leftangle rightangle" iA
 \left<${1:${VISUAL}} \right>$0
 endsnippet
 
@@ -425,7 +441,7 @@ endsnippet
 
 priority 200
 context "math()"
-snippet '(?<!\\)(arcsin|arccos|arctan|arccot|arccsc|arcsec|pi|zeta|int)' "ln" rwA
+snippet '(?<!\\)(arcsin|arccos|arctan|arccot|arccsc|arcsec|pi|zeta|int|theta)' "ln" rwA
 \\`!p snip.rv = match.group(1)`
 endsnippet
 
@@ -574,6 +590,12 @@ endsnippet
 
 snippet cvec "column vector" iA
 \begin{pmatrix} ${1:x}_${2:1}\\\\ \vdots\\\\ $1_${2:n} \end{pmatrix}
+endsnippet
+
+priority 10
+context "math()"
+snippet "vec" "vec" ri
+\overrightarrow{$1}$0
 endsnippet
 
 priority 10
