@@ -17,3 +17,5 @@ alias tls='tmux ls'
 alias ".."="cd ..;l"
 
 alias lg='lazygit'
+
+alias mvim="NVIM_APPNAME=mvim nvim"
