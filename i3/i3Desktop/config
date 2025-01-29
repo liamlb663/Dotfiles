@@ -282,6 +282,7 @@ bindsym $mod+BackSpace mode "[L]ogout, [R]eboot, [S]hutdown, s[U]spend"
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
 for_window [class="matplotlib"] floating enable
+for_window [class="openglProject"] floating enable
 
 #smart_gaps on
 #hide_edge_borders smart_no_gaps
