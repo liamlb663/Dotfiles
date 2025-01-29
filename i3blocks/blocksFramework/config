@@ -26,7 +26,7 @@ command=echo "$USER"
 interval=once
 
 [Temp]
-command=echo $(curl "wttr.in/rochester?m&format=%f")
+command=echo $(curl "wttr.in/rochester?m&format=%t")
 interval=60*30
 
 [time]
