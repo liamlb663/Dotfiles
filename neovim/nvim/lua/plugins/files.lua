@@ -26,7 +26,15 @@ return {
     },
     {   -- File Tree
         "nvim-tree/nvim-tree.lua",
-        lazy = false,
+        lazy = true,
+        keys = {
+            { "<leader>t", "<cmd>NvimTreeToggle<cr>", desc = "NvimTree" },
+        },
+        cmd = {
+            "NvimTreeToggle",
+            "NvimTreeOpen",
+            "NvimTreeFocus",
+        },
         dependencies = {
             "nvim-tree/nvim-web-devicons",
         },

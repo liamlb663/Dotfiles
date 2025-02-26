@@ -10,11 +10,10 @@ return {
     {
         "ellisonleao/gruvbox.nvim",
         lazy = false,
-        priority = 1000 ,
     },
     {
         "alexxGmZ/e-ink.nvim",
-        priority = 1000,
+        lazy = false,
         config = function ()
             vim.opt.background = "dark"
         end
