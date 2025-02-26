@@ -11,6 +11,7 @@ opt.mouse = "a"       -- Enable mouse support
 opt.hlsearch = true   -- Highlight search results
 opt.incsearch = true  -- Incremental search
 vim.wo.linebreak = true
+vim.wo.wrap = true
 
 -- Indentation settings
 opt.tabstop = 4       -- Number of spaces per tab
