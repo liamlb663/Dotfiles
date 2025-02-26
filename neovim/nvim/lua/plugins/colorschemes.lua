@@ -7,19 +7,14 @@ return {
     {
         "ellisonleao/gruvbox.nvim",
         lazy = false,
-        priority = 1000 ,
+        priority = 1000,
         config = function()
             vim.cmd.colorscheme "gruvbox"
         end
     },
     {
         "alexxGmZ/e-ink.nvim",
+        lazy = false,
         priority = 1000,
-        config = function ()
-            require("e-ink").setup()
-            --vim.cmd.colorscheme "e-ink"
-
-            vim.opt.background = "dark"
-        end
     }
 }
