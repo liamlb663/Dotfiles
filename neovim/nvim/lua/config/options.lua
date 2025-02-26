@@ -2,7 +2,7 @@ local opt = vim.opt
 local api = vim.api
 
 -- Disable compatibility mode
-compatible = false
+opt.compatible = false
 
 -- UI settings
 opt.showmatch = true  -- Show matching brackets

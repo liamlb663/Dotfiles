@@ -2,7 +2,7 @@ local opt = vim.opt
 local api = vim.api
 
 -- Disable compatibility mode
-compatible = false
+opt.compatible = false
 
 -- UI settings
 opt.showmatch = true  -- Show matching brackets
@@ -10,6 +10,7 @@ opt.ignorecase = true -- Case-insensitive search
 opt.mouse = "a"       -- Enable mouse support
 opt.hlsearch = true   -- Highlight search results
 opt.incsearch = true  -- Incremental search
+vim.wo.linebreak = true
 
 -- Indentation settings
 opt.tabstop = 4       -- Number of spaces per tab
@@ -22,15 +23,8 @@ opt.scrolloff = 5     -- Keep at least 5 lines above/below cursor
 -- Color settings
 opt.termguicolors = true -- Enable 24-bit RGB colors
 
--- Line number settings
-opt.number = true         -- Show line numbers
-opt.relativenumber = true -- Show relative line numbers
-
 -- Command-line completion mode
 opt.wildmode = { "longest", "list" }
-
--- Color column for long lines
-opt.colorcolumn = "100"
 
 -- Enable filetype-specific settings
 vim.cmd("filetype plugin indent on")
