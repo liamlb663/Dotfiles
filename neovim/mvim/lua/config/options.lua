@@ -12,6 +12,7 @@ opt.hlsearch = true   -- Highlight search results
 opt.incsearch = true  -- Incremental search
 vim.wo.linebreak = true
 vim.wo.wrap = true
+vim.o.list = true
 
 -- Indentation settings
 opt.tabstop = 4       -- Number of spaces per tab
