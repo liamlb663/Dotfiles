@@ -47,4 +47,14 @@ return {
             vim.api.nvim_set_keymap("n", "<leader>t", ":NvimTreeToggle <CR>", {noremap = true}))
         end
     },
+    {
+        'ibhagwan/fzf-lua',
+        dependencies = { 'nvim-tree/nvim-web-devicons' },
+        config = function()
+            require('fzf-lua').setup {}
+            -- Keybindings
+            vim.api.nvim_set_keymap('n', '<leader>ff', "<cmd>lua require('fzf-lua').files()<CR>", { noremap = true, silent = true })
+            vim.api.nvim_set_keymap('n', '<leader>fg', "<cmd>lua require('fzf-lua').grep()<CR>", { noremap = true, silent = true })
+        end
+    },
 }
