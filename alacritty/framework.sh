@@ -4,11 +4,11 @@
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 # Define the target directory (local nvim directory) and the link destination
-TARGET_DIR="$SCRIPT_DIR/alacritty"
+TARGET_DIR="$SCRIPT_DIR/alacrittyFramework"
 LINK_DEST="$HOME/.config/alacritty"
 
 # Remove any existing symbolic link or directory at ~/.config/nvim
-if [ -e "$LINK_DEST" ]; then
+if [ -e "$LINK_DEST" ] || [ -L "$LINK_DEST" ]; then
     rm -rf "$LINK_DEST"
 fi
 
