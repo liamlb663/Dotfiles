@@ -11,4 +11,10 @@ return {
             leap.add_default_mappings()
         end,
     },
+    {
+        "folke/todo-comments.nvim",
+        dependencies = { "nvim-lua/plenary.nvim" },
+        opts = {
+        }
+    }
 }
