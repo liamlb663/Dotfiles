@@ -30,6 +30,10 @@ return {
             ui = {
                 enable = false,
             },
+            notes = {
+                new_note_location = "Notes",
+                template = "metadata-template",  -- Automatically apply this template
+            },
         })
 
         local opts = { noremap = true, silent = true }
@@ -41,7 +45,7 @@ return {
         vim.api.nvim_set_keymap("n", "<leader>ot", ":ObsidianToday<CR>", opts)
 
         -- Create a new note
-        vim.api.nvim_set_keymap("n", "<leader>on", ":ObsidianNew ", { noremap = true, silent = false })
+        vim.api.nvim_set_keymap("n", "<leader>on", ":ObsidianNewFromTemplate ", { noremap = true, silent = false })
 
         -- Create a Markdown link to the note under the cursor
         vim.api.nvim_set_keymap("n", "<leader>ol", ":ObsidianLink<CR>", opts)
