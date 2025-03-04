@@ -27,6 +27,9 @@ return {
             picker = {
                 name = "fzf-lua",
             },
+            ui = {
+                enable = false,
+            },
         })
 
         local opts = { noremap = true, silent = true }
