@@ -76,13 +76,13 @@ return {
             vim.api.nvim_set_keymap('n', '<leader>ff', "<cmd>lua require('fzf-lua').files()<CR>",
                 { noremap = true, silent = true })
 
-        vim.api.nvim_set_keymap('n', '<leader>fg', "<cmd>lua require('fzf-lua').live_grep()<CR>",
+            vim.api.nvim_set_keymap('n', '<leader>fg', "<cmd>lua require('fzf-lua').live_grep()<CR>",
                 { noremap = true, silent = true })
 
-        vim.api.nvim_set_keymap('n', '<leader>fb', "<cmd>lua require('fzf-lua').buffers()<CR>",
+            vim.api.nvim_set_keymap('n', '<leader>fb', "<cmd>lua require('fzf-lua').buffers()<CR>",
                 { noremap = true, silent = true })
 
-        vim.api.nvim_set_keymap('n', '<leader>fh', "<cmd>lua require('fzf-lua').help_tags()<CR>",
+            vim.api.nvim_set_keymap('n', '<leader>fh', "<cmd>lua require('fzf-lua').help_tags()<CR>",
                 { noremap = true, silent = true })
 
         end

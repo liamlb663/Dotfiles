@@ -9,6 +9,37 @@ return {
         "hrsh7th/nvim-cmp",
         "nvim-treesitter/nvim-treesitter"
     },
+    cmd = {
+        "ObsidianOpen",
+        "ObsidianToday",
+        "ObsidianNewFromTemplate",
+        "ObsidianLink",
+        "ObsidianFollowLink",
+        "ObsidianBacklinks",
+        "ObsidianRename"
+    },
+    keys = {
+        { "<leader>oo", ":ObsidianOpen<CR>",
+            desc = "Open Obsidian" },
+        { "<leader>ot", ":ObsidianToday<CR>",
+            desc = "Open today's daily note" },
+        { "<leader>on", ":ObsidianNewFromTemplate ", mode = "n",
+            desc = "Create a new note" },
+        { "<leader>ol", ":ObsidianLink<CR>",
+            desc = "Create a Markdown link to the note under the cursor" },
+        { "<leader>of", ":lua require('fzf-lua').files({ cwd = '~/Documents/Obsidian/main' })<CR>",
+            desc = "Search files in Obsidian vault" },
+        { "<leader>og", ":lua require('fzf-lua').live_grep({ cwd = '~/Documents/Obsidian/main' })<CR>",
+            desc = "Live grep in Obsidian vault" },
+        { "gd", ":ObsidianFollowLink<CR>",
+            desc = "Go to the definition of a wiki link" },
+        { "<leader>ob", ":ObsidianBacklinks<CR>",
+            desc = "Show backlinks to current note" },
+        { "<leader>os", ":lua require('fzf-lua').grep({ search = vim.fn.expand('<cword>'), cwd = '~/Documents/ObsidianVault' })<CR>",
+            desc = "Search backlinks using FzfLua" },
+        { "<leader>or", ":ObsidianRename ", mode = "n",
+            desc = "Rename current note" }
+    },
     config = function()
         require("obsidian").setup({
             dir = "~/Documents/Obsidian/main",
@@ -19,11 +50,11 @@ return {
                 folder = "Daily",
                 template = "daily.md",
             },
-            templates = {
-                subdir = "Templates",
-                date_format = "%Y-%m-%d",
-                time_format = "%H:%M",
-            },
+            --templates = {
+            --    subdir = "Templates",
+            --    date_format = "%Y-%m-%d",
+            --    time_format = "%H:%M",
+            --},
             picker = {
                 name = "fzf-lua",
             },
