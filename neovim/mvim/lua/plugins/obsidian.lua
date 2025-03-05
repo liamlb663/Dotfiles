@@ -23,7 +23,7 @@ return {
             desc = "Open Obsidian" },
         { "<leader>ot", ":ObsidianToday<CR>",
             desc = "Open today's daily note" },
-        { "<leader>on", ":ObsidianNewFromTemplate ", mode = "n",
+        { "<leader>on", ":ObsidianNew", mode = "n",
             desc = "Create a new note" },
         { "<leader>ol", ":ObsidianLink<CR>",
             desc = "Create a Markdown link to the note under the cursor" },
@@ -76,7 +76,7 @@ return {
         vim.api.nvim_set_keymap("n", "<leader>ot", ":ObsidianToday<CR>", opts)
 
         -- Create a new note
-        vim.api.nvim_set_keymap("n", "<leader>on", ":ObsidianNewFromTemplate ", { noremap = true, silent = false })
+        vim.api.nvim_set_keymap("n", "<leader>on", ":ObsidianNew<CR>", { noremap = true, silent = false })
 
         -- Create a Markdown link to the note under the cursor
         vim.api.nvim_set_keymap("n", "<leader>ol", ":ObsidianLink<CR>", opts)
