@@ -48,7 +48,7 @@ return {
             },
             daily_notes = {
                 folder = "Daily",
-                template = "daily.md",
+                -- template = "daily.md",
             },
             --templates = {
             --    subdir = "Templates",
