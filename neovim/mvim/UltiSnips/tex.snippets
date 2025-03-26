@@ -20,19 +20,14 @@ snippet template "Basic template" b
 \usepackage{textcomp}
 
 \usepackage{amsmath, amssymb, mathrsfs}
+\usepackage{enumitem}
 
-% figure support
-\usepackage{import}
-\usepackage{xifthen}
-\pdfminorversion=7
-\usepackage{pdfpages}
-\usepackage{transparent}
-\newcommand{\incfig}[1]{%
-	\def\svgwidth{\columnwidth}
-	\import{./figures/}{#1.pdf_tex}
-}
+\usepackage{pagecolor}
+\pagecolor{white}
 
-\pdfsuppresswarningpagegroup=1
+\usepackage{tcolorbox}
+\newtcolorbox{note}{colback=yellow!20, colframe=black}
+\newtcolorbox{recap}{colback=blue!15, colframe=black}
 
 \begin{document}
 	$0
@@ -537,10 +532,6 @@ endsnippet
 
 snippet OO "emptyset" iA
 \O
-endsnippet
-
-snippet RR "real" iA
-\R
 endsnippet
 
 snippet QQ "Q" iA

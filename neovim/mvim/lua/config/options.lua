@@ -13,6 +13,7 @@ opt.incsearch = true  -- Incremental search
 vim.wo.linebreak = true
 vim.wo.wrap = true
 vim.o.list = true
+vim.opt.cursorline = true
 
 -- Indentation settings
 opt.tabstop = 4       -- Number of spaces per tab

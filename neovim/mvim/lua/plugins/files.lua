@@ -47,6 +47,26 @@ return {
             vim.api.nvim_set_keymap("n", "<leader>t", ":NvimTreeToggle <CR>", {noremap = true})
         end
     },
+    {   -- Code Outline
+        'stevearc/aerial.nvim',
+        dependencies = {
+            "nvim-treesitter/nvim-treesitter",
+            "nvim-tree/nvim-web-devicons"
+        },
+        config = function()
+                require('aerial').setup({
+                -- use on_attach to set keymaps when aerial has attached to a buffer
+                on_attach = function(bufnr)
+                    -- Jump forwards/backwards with '{' and '}'
+                    vim.api.nvim_buf_set_keymap(bufnr, 'n', '{', '<cmd>AerialPrev<CR>', {})
+                    vim.api.nvim_buf_set_keymap(bufnr, 'n', '}', '<cmd>AerialNext<CR>', {})
+
+                    -- Toggle
+                    vim.api.nvim_set_keymap('n', '<leader>a', '<cmd>AerialToggle!<CR>', {})
+                end
+            })
+        end
+    },
     {
         'ibhagwan/fzf-lua',
         dependencies = { 'nvim-tree/nvim-web-devicons' },
