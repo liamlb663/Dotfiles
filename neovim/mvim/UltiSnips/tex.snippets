@@ -36,8 +36,9 @@ endsnippet
 
 snippet beg "begin{} / end{}" bA
 \\begin{$1}
-	$0
+	$2
 \\end{$1}
+$0
 endsnippet
 
 snippet table "Table environment" b
@@ -241,6 +242,46 @@ endsnippet
 
 snippet lr< "leftangle rightangle" iA
 \left<${1:${VISUAL}} \right>$0
+endsnippet
+
+snippet l( "left(" iA
+\left( 
+endsnippet
+
+snippet l| "left|" iA
+\left| 
+endsnippet
+
+snippet l{ "left\{" iA
+\left\\{ 
+endsnippet
+
+snippet l[ "left[" iA
+\left[ 
+endsnippet
+
+snippet l< "leftangle" iA
+\left< 
+endsnippet
+
+snippet r) "right(" iA
+\right) 
+endsnippet
+
+snippet r| "right|" iA
+\right| 
+endsnippet
+
+snippet r} "right\{" iA
+\right\\} 
+endsnippet
+
+snippet r] "right[" iA
+\right] 
+endsnippet
+
+snippet r> "leftangle" iA
+\right> 
 endsnippet
 
 context "math()"
@@ -631,47 +672,64 @@ snippet CAL "Math cal" iA
 endsnippet
 
 snippet PM "Plus Minus" iA
-\textpm
+\textpm 
+endsnippet
+
+priority 100
+context "math()"
+snippet PM "Plus Minus" iA
+\pm 
+endsnippet
+
+priority 100
+context "math()"
+snippet +- "Plus Minus" iA
+\pm 
 endsnippet
 
 context "math()"
 snippet tau "tau" iA
-\tau
+\tau 
 endsnippet
 
 context "math()"
 snippet Tau "Tau" iA
-\Tau
+\Tau 
 endsnippet
 
 context "math()"
 snippet sigma "sigma" iA
-\sigma
+\sigma 
 endsnippet
 
 context "math()"
 snippet omega "omega" iA
-\omega
+\omega 
 endsnippet
 
 context "math()"
 snippet alpha "alpha" iA
-\alpha
+\alpha 
 endsnippet
 
 context "math()"
 snippet beta "beta" iA
-\beta
+\beta 
 endsnippet
 
 context "math()"
 snippet phi "phi" iA
-\phi
+\phi 
+endsnippet
+
+context "math()"
+snippet rho "rho" iA
+\rho 
 endsnippet
 
 context "math()"
 snippet pmod "Paren Mod" iA
-\pmod 
+\pmod{$1}$0
 endsnippet
 
 context "math()"
