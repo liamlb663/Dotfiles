@@ -9,6 +9,7 @@ return {
         init = function() vim.g.barbar_auto_setup = false end,
         config = function()
             require("barbar").setup()
+            require("gitsigns").setup()
 
             local keymap = vim.api.nvim_set_keymap
             local opts = { noremap = true, silent = true }
