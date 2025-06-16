@@ -24,6 +24,8 @@ return {
             automatic_installation = true,
         })
 
+        local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
         -- LSP keybindings
         local on_attach = function(client, bufnr)
             local opts = { noremap = true, silent = true, buffer = bufnr }
@@ -63,16 +65,14 @@ return {
         end
 
         -- Automatically setup any LSP installed via Mason
-        mason_lspconfig.setup_handlers({
-            function(server_name)
-                if not servers[server_name] then
-                    lspconfig[server_name].setup({
-                        capabilities = capabilities,
-                        on_attach = on_attach,
-                    })
-                end
-            end,
-        })
+        for _, server in ipairs(mason_lspconfig.get_installed_servers()) do
+            if not servers[server] then
+                lspconfig[server].setup({
+                    capabilities = capabilities,
+                    on_attach = on_attach,
+                })
+            end
+        end
 
         vim.diagnostic.config({
             virtual_text = {
