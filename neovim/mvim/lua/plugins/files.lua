@@ -1,4 +1,11 @@
 return {
+    {
+        'lewis6991/gitsigns.nvim',
+        event = { "BufReadPre", "BufNewFile" },
+        config = function()
+            require('gitsigns').setup()
+        end,
+    },
     {   -- Tabs
         'romgrk/barbar.nvim',
         lazy = false,
@@ -9,7 +16,6 @@ return {
         init = function() vim.g.barbar_auto_setup = false end,
         config = function()
             require("barbar").setup()
-            require("gitsigns").setup()
 
             local keymap = vim.api.nvim_set_keymap
             local opts = { noremap = true, silent = true }
