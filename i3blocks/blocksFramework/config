@@ -17,7 +17,7 @@ interval=2
 
 [Ip]
 color=#66ff66
-command=echo $(ip addr | grep inet | grep -v "host" | grep -v "inet6" | grep -v "docker" | tail -n 1 | awk '{print($2)}')
+command=echo $(ip addr | grep inet | grep -v "host" | grep -v "inet6" | grep -v "docker" | head -n 1 | awk '{print($2)}')
 interval=60*15
 
 [Current User]
