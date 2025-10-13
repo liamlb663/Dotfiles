@@ -1,21 +1,15 @@
 return {
     "neovim/nvim-lspconfig",
     dependencies = {
-        "williamboman/mason.nvim", -- Package manager for LSP servers
-        "williamboman/mason-lspconfig.nvim", -- Bridge between Mason and lspconfig
-        "hrsh7th/nvim-cmp", -- Autocompletion
-        "hrsh7th/cmp-nvim-lsp", -- LSP completion source for nvim-cmp
-        "j-hui/fidget.nvim", -- LSP progress notifications
-        -- "folke/neodev.nvim", -- Enhancements for Neovim development
+        "mason-org/mason.nvim",
+        "mason-org/mason-lspconfig.nvim",
+        "hrsh7th/nvim-cmp",
+        "hrsh7th/cmp-nvim-lsp",
+        "j-hui/fidget.nvim",
     },
     config = function()
-        local lspconfig = require("lspconfig")
-        local mason = require("mason")
-        local mason_lspconfig = require("mason-lspconfig")
-
-        -- Enable Mason and Mason-LSPConfig
-        mason.setup()
-        mason_lspconfig.setup({
+        local mason = require("mason").setup()
+        local mason_lspconfig = require("mason-lspconfig").setup({
             ensure_installed = {
                 "lua_ls",
                 "clangd",
@@ -44,41 +38,22 @@ return {
             keymap("n", "<leader>q", vim.diagnostic.setloclist, opts)
         end
 
-        -- LSP Server Configuration
-        local servers = {
-            lua_ls = {
-                settings = {
-                    Lua = {
-                        diagnostics = { globals = { "vim" } },
-                        workspace = { library = vim.api.nvim_get_runtime_file("", true) },
-                    },
+        vim.lsp.config("*", {
+            capabilities = capabilities,
+            on_attach = on_attach,
+        })
+
+        vim.lsp.config("lua_ls", {
+            settings = {
+                Lua = {
+                    diagnostics = { globals = { "vim" } },
+                    workspace = { library = vim.api.nvim_get_runtime_file("", true) },
                 },
             },
-        }
-
-        -- Setup each LSP server
-        for server, config in pairs(servers) do
-            lspconfig[server].setup(vim.tbl_deep_extend("force", {
-                capabilities = require("cmp_nvim_lsp").default_capabilities(),
-                on_attach = on_attach,
-            }, config))
-        end
-
-        -- Automatically setup any LSP installed via Mason
-        for _, server in ipairs(mason_lspconfig.get_installed_servers()) do
-            if not servers[server] then
-                lspconfig[server].setup({
-                    capabilities = capabilities,
-                    on_attach = on_attach,
-                })
-            end
-        end
+        })
 
         vim.diagnostic.config({
-            virtual_text = {
-                spacing = 4,
-                prefix = "●", -- or "■", "▶", "", etc.
-            },
+            virtual_text = { spacing = 4, prefix = "●" },
             signs = true,
             underline = true,
             update_in_insert = false,
@@ -87,7 +62,6 @@ return {
 
         -- UI Enhancements
         require("fidget").setup({})
-        -- require("neodev").setup({})
     end,
 }
 
