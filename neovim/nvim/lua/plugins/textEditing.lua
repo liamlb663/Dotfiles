@@ -7,8 +7,9 @@ return {
         "ggandor/leap.nvim",
         event = "BufReadPost",
         config = function()
-            local leap = require("leap")
-            leap.add_default_mappings()
+            --local leap = require("leap")
+
+            vim.keymap.set({'n', 'x', 'o'}, 's', '<Plug>(leap)')
         end,
     },
     {
