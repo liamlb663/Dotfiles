@@ -21,6 +21,6 @@ alias lg='lazygit'
 alias mvim="NVIM_APPNAME=mvim nvim"
 
 # So fuckin stupid
-alias cmd="cmd.exe"
-alias powershell="powershell.exe"
-alias ps="powershell"
+#alias cmd="cmd.exe"
+#alias powershell="powershell.exe"
+#alias ps="powershell"
