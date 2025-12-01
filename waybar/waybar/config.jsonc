@@ -4,8 +4,8 @@
     "passthrough": "true",
     "gtk-layer-shell": "true",
     "margin-top": -10,
-    "margin-left": 0,
-    "margin-right": 0,
+    "margin-left": 10,
+    "margin-right": 10,
     "height": 41,
     "modules-left": [
         "custom/weather",
