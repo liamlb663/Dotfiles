@@ -1,0 +1,3 @@
+[submodule "hyprland/hypr/BackgroundPicker"]
+	path = hyprland/hypr/BackgroundPicker
+	url = git@github.com:liamlb663/BackgroundPicker.git
