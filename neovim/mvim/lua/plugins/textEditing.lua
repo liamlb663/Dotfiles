@@ -4,7 +4,7 @@ return {
         lazy = false,
     },
     {
-        "ggandor/leap.nvim",
+        url = "https://codeberg.org/andyg/leap.nvim",
         event = "BufReadPost",
         config = function()
             vim.keymap.set({'n', 'x', 'o'}, 's', '<Plug>(leap)')
