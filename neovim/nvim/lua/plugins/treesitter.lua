@@ -4,6 +4,7 @@ return {
     event = "BufReadPost",
     config = function ()
       local configs = require("nvim-treesitter.configs")
+      vim.treesitter.query.set('markdown', 'injections', '');
 
       configs.setup({
             ensure_installed =

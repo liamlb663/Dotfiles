@@ -42,7 +42,7 @@ return {
     },
     config = function()
         require("obsidian").setup({
-            dir = "~/Documents/Obsidian/main",
+            dir = "~/Notes",
             completion = {
                 nvim_cmp = true,
             },
