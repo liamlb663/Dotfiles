@@ -53,6 +53,19 @@ return {
             },
         })
 
+        vim.lsp.config("rust_analyzer", {
+            settings = {
+                ["rust-analyzer"] = {
+                    check = {
+                        command = "clippy",
+                    },
+                    cargo = {
+                        allFeatures = true,
+                    },
+                },
+            },
+        })
+
         vim.diagnostic.config({
             virtual_text = { spacing = 4, prefix = "●" },
             signs = true,
