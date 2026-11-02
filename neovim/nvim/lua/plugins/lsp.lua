@@ -13,7 +13,6 @@ return {
             ensure_installed = {
                 "lua_ls",
                 "clangd",
-                "rust_analyzer",
             },
             automatic_installation = true,
         })
@@ -54,6 +53,7 @@ return {
         })
 
         vim.lsp.config("rust_analyzer", {
+            cmd = { "rustup", "run", "stable", "rust-analyzer" },
             settings = {
                 ["rust-analyzer"] = {
                     check = {
@@ -65,6 +65,8 @@ return {
                 },
             },
         })
+        -- Not installed via Mason, so mason-lspconfig won't auto-enable it
+        vim.lsp.enable("rust_analyzer")
 
         vim.diagnostic.config({
             virtual_text = { spacing = 4, prefix = "●" },
